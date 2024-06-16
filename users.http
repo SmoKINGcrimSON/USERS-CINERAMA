@@ -39,3 +39,27 @@ Content-Type: application/json
     "password": "314455Fer?*",
     "email": "fernandolol169@outlook.com"
 }
+
+
+
+
+###DEPLOY!!!
+POST https://users-cinerama-production.up.railway.app/users/signin
+Content-Type: application/json
+
+{
+    "password": "314455Fer?*",
+    "email": "fernandolol169@outlook.com"
+}
+
+###
+POST https://users-cinerama-production.up.railway.app/users
+Content-Type: application/json
+
+{
+    "nickname": "FerchoWarrior169",
+    "password": "314455Fer?*",
+    "name": "Fernando Sánchez",
+    "email": "fernandolol169@outlook.com",
+    "register_date": "2024-06-11T00:00:00.000Z"
+}

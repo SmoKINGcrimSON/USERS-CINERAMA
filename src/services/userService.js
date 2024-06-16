@@ -48,7 +48,7 @@ export class UserService{
                     return res.status(400).json({ mess: JSON.parse(result.error.message) });
                 }
                 const user = await this.repository.create({ body: body });
-                const token = jwt.sign({ id: user.id }, secret, { expiresIn: '1h' });
+                const token = jwt.sign({ id: user.id }, secret || process.env.secret, { expiresIn: '1h' });
                 console.log(token);
                 return user === null ? 
                     res.status(400).json({ "Error": "Recurso no creado" }) : 
