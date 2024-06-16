@@ -1,0 +1,28 @@
+{
+  "name": "users-cinerama-backend",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "3.1.3",
+    "prisma": "5.15.0"
+  },
+  "dependencies": {
+    "@prisma/client": "5.15.0",
+    "bcryptjs": "2.4.3",
+    "buffer": "6.0.3",
+    "cors": "2.8.5",
+    "dotenv": "16.4.5",
+    "express": "4.19.2",
+    "jsonwebtoken": "9.0.2",
+    "uuid": "9.0.1",
+    "zod": "3.23.8"
+  }
+}

@@ -1,0 +1,41 @@
+###GET ALL
+GET http://localhost:1234/users
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJhNDNlZDc2LTFhMjgtNGU0ZS05NTA0LTUyY2VjNjNmM2QyZCIsImlhdCI6MTcxODIwNDIyNywiZXhwIjoxNzE4MjA0NTI3fQ.cvdxmYHs-w7nFgWIOVo5eJqToSQM5xF6SmKcJuexTi8
+###GET ONE USER
+GET http://localhost:1234/users/readById
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJhNDNlZDc2LTFhMjgtNGU0ZS05NTA0LTUyY2VjNjNmM2QyZCIsImlhdCI6MTcxODIwMzY3NywiZXhwIjoxNzE4MjAzOTc3fQ.Yu08UAS3Blcjzuqv6nignpZl7kM-KT4tjjr40-RUrpc
+###CREATE
+POST http://localhost:1234/users
+Content-Type: application/json
+
+{
+    "nickname": "FerchoWarrior169",
+    "password": "314455Fer?*",
+    "name": "Fernando Sánchez",
+    "email": "fernandolol169@outlook.com",
+    "register_date": "2024-06-11T00:00:00.000Z"
+}
+###DELETE BY ID
+DELETE http://localhost:1234/users
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0ZTNlZWI5LWEyMTUtNGVlOS1hMzM5LTNlZTViZTA2N2U4NSIsImlhdCI6MTcxODIwMzYxOSwiZXhwIjoxNzE4MjAzOTE5fQ.C2s5y18INvoDmc7WrX6CtTSlpjvY-24slvNON7zjMvc
+###UPDATE
+PATCH http://localhost:1234/users
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0ZTNlZWI5LWEyMTUtNGVlOS1hMzM5LTNlZTViZTA2N2U4NSIsImlhdCI6MTcxODIwMzYxOSwiZXhwIjoxNzE4MjAzOTE5fQ.C2s5y18INvoDmc7WrX6CtTSlpjvY-24slvNON7zjMvc
+
+{
+    "nickname": "Saruman12:D",
+    "password": "3321Mamu*",
+    "name": "Rodrigo Cruzado",
+    "email": "sarupapu97@gmail.com",
+    "register_date": "2022-01-12T00:00:00.000Z"
+}
+###LOGIN
+POST http://localhost:1234/users/signin
+Content-Type: application/json
+
+{
+    "password": "314455Fer?*",
+    "email": "fernandolol169@outlook.com"
+}
