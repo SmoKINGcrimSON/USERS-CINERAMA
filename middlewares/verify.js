@@ -5,7 +5,7 @@ export function verifyToken(req, res, next){
     try{
         const token = req.headers['x-access-token']
         if(!token) return res.status(401).json({auth: false, message: 'no token provided'})
-        const decoded = jwt.verify(token, secret)
+        const decoded = jwt.verify(token, secret || process.env.secret)
         console.log(decoded)
         req.id = decoded.id
         next()
