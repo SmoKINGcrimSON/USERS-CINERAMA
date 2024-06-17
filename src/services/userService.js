@@ -48,12 +48,11 @@ export class UserService{
                     return res.status(400).json({ mess: JSON.parse(result.error.message) });
                 }
                 const user = await this.repository.create({ body: body });
-                //const token = jwt.sign({ id: user.id }, secret || process.env.secret, { expiresIn: '1h' });
-                //console.log(token);
+                const token = jwt.sign({ id: user.id }, secret || process.env.secret, { expiresIn: '1h' });
+                console.log(token);
                 return user === null ? 
                     res.status(400).json({ "Error": "Recurso no creado" }) : 
-                    //res.json({ user: user, token: token });
-                    res.json({user: user})
+                    res.json({ user: user, token: token });
             } catch (error) {
                 console.error('Error creando usuario:', error);
                 return res.status(500).json({ message: 'Error interno del servidor' });
