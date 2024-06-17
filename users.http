@@ -63,3 +63,5 @@ Content-Type: application/json
     "email": "fernandolol169@outlook.com",
     "register_date": "2024-06-11T00:00:00.000Z"
 }
+###
+GET https://users-cinerama-production.up.railway.app/users/test

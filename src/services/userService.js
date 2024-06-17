@@ -89,6 +89,7 @@ export class UserService{
     }
 
     async test(req, res){
-        res.status(200).json({"200": "ok"})
+        const result = await this.repository.readAll()
+        res.status(200).json(result)
     }
 }
