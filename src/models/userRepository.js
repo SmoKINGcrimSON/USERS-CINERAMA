@@ -21,8 +21,6 @@ export class UserRepository{ //will we dependency injection for services
                     register_date : body.register_date
                 }
             })
-            console.log('llego hasta aquí')
-            console.log(body)
             //modify user
             user = this.transform(user)
             user = {id: uuid, ...user}
@@ -31,6 +29,7 @@ export class UserRepository{ //will we dependency injection for services
         }
         catch(error){
             if(error.code === 'P2002') console.log(`${error.code}: user already exist.`)
+            else console.log(error)
             return null
         }
     }
