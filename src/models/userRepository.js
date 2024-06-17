@@ -2,6 +2,7 @@ import {PrismaClient} from '@prisma/client'
 import { Buffer } from 'buffer'
 import { stringify } from 'uuid'
 import { parse } from 'uuid'
+import crypto from 'crypto'
 
 const prisma = new PrismaClient()
 
