@@ -9,7 +9,6 @@ export class UserRepository{ //will we dependency injection for services
 
     async create({body}){
         try{
-            console.log('llego hasta aquí')
             const uuid = crypto.randomUUID()
             //call DB
             let user = await prisma.user.create({
@@ -22,6 +21,8 @@ export class UserRepository{ //will we dependency injection for services
                     register_date : body.register_date
                 }
             })
+            console.log('llego hasta aquí')
+            console.log(body)
             //modify user
             user = this.transform(user)
             user = {id: uuid, ...user}
