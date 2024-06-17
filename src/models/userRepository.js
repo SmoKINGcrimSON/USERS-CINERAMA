@@ -9,6 +9,7 @@ export class UserRepository{ //will we dependency injection for services
 
     async create({body}){
         try{
+            console.log('llego hasta aquí')
             const uuid = crypto.randomUUID()
             //call DB
             let user = await prisma.user.create({
