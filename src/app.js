@@ -13,6 +13,3 @@ app.use(cors())
 const userRouter = new UserRouter(new UserService(new UserRepository())).router 
 //end-points
 app.use('/users', userRouter)
-app.get('/test', (req, res) => {
-    res.status(200).json({"200": "ok"})
-})

@@ -21,5 +21,6 @@ export class UserRouter{
         this.router.delete('/', verifyToken, this.service.deleteById.bind(this.service))
         this.router.patch('/', verifyToken, this.service.updateById.bind(this.service))
         this.router.post('/signin', this.service.signIn.bind(this.service))
+        this.router.get('/test', this.service.test.bind(this.service))
     }
 }

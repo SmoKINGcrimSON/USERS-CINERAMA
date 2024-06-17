@@ -87,4 +87,8 @@ export class UserService{
         const token = jwt.sign({id: user.id}, secret, {expiresIn: 60 * 5})
         res.status(200).json({auth: true, token: token})
     }
+
+    async test(req, res){
+        res.status(200).json({"200": "ok"})
+    }
 }
