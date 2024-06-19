@@ -25,38 +25,24 @@ export class UserService{
             res.status(200).json(user)
     }
     async create(req, res){
-        /*
-        const body = req.body
-        body.register_date = new Date(body.register_date)
-        const result = validateUser(body)
-        if(result.error) return res.status(400).json({mess: JSON.parse(result.error.message)})
-        const user = await this.repository.create({body: body})
-        ///jwt!!! dangerous!!!
-        const token = jwt.sign({id: user.id}, secret, {expiresIn: '1h'}) //ten minutes
-        console.log(token)
-        ///
-        return user === null? 
-            res.status(400).json({"Error": "resource not created"}) : 
-            res.json({user: user, token: token})
-            */
-            try {
-                const body = req.body;
-                body.register_date = new Date(body.register_date);
-                const result = validateUser(body);
-                if (result.error) {
-                    console.error('Error de validación:', result.error);
-                    return res.status(400).json({ mess: JSON.parse(result.error.message) });
-                }
-                const user = await this.repository.create({ body: body });
-                const token = jwt.sign({ id: user.id }, secret || process.env.secret, { expiresIn: '1h' });
-                console.log(token);
-                return user === null ? 
-                    res.status(400).json({ "Error": "Recurso no creado" }) : 
-                    res.json({ user: user, token: token });
-            } catch (error) {
-                console.error('Error creando usuario:', error);
-                return res.status(500).json({ message: 'Error interno del servidor' });
+        try {
+            const body = req.body;
+            body.register_date = new Date(body.register_date);
+            const result = validateUser(body);
+            if (result.error) {
+                console.error('Error de validación:', result.error);
+                return res.status(400).json({ mess: JSON.parse(result.error.message) });
             }
+            const user = await this.repository.create({ body: body });
+            const token = jwt.sign({ id: user.id }, secret || process.env.secret, { expiresIn: '1h' });
+            console.log(token);
+            return user === null ? 
+                res.status(400).json({ "Error": "Recurso no creado" }) : 
+                res.json({ user: user, token: token });
+        } catch (error) {
+            console.error('Error creando usuario:', error);
+            return res.status(500).json({ message: 'Error interno del servidor' });
+        }
     }
     async deleteById(req, res){
         const id = req.id
@@ -84,7 +70,7 @@ export class UserService{
         const user = await this.repository.findUser(result.data)
         if(user === null) return res.status(400).json({auth: false, token: null})
         console.log(user)
-        const token = jwt.sign({id: user.id}, secret, {expiresIn: 60 * 5})
+        const token = jwt.sign({id: user.id}, secret)
         res.status(200).json({auth: true, token: token})
     }
 

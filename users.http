@@ -43,13 +43,20 @@ Content-Type: application/json
 
 
 
+
+
+
+
+
+
+
 ###DEPLOY!!!
 POST https://users-cinerama-production.up.railway.app/users/signin
 Content-Type: application/json
 
 {
     "password": "314455Fer?*",
-    "email": "fernandolol169@outlook.com"
+    "email": "ferchowarrior169@gmail.com"
 }
 
 ###
@@ -57,11 +64,38 @@ POST https://users-cinerama-production.up.railway.app/users
 Content-Type: application/json
 
 {
-    "nickname": "FerchoWarrior169",
+    "nickname": "SmoKING169",
     "password": "314455Fer?*",
-    "name": "Fernando Sánchez",
-    "email": "fernandolol169@outlook.com",
+    "name": "Gabriel Sánchez",
+    "email": "ferchowarrior169@gmail.com",
     "register_date": "2024-06-11T00:00:00.000Z"
 }
 ###
 GET https://users-cinerama-production.up.railway.app/users/test
+###
+GET https://users-cinerama-production.up.railway.app/users
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzZDkwMjYzLWVjMDgtNGM0YS05YTUyLWUzZGM1MWM3NThmYSIsImlhdCI6MTcxODU5NjQwOCwiZXhwIjoxNzE4NTk2NzA4fQ.it6RfMgTKMbcXROnW2dz8s_VeLR5Yyfp_h2Mb5KaPMI
+###
+DELETE https://users-cinerama-production.up.railway.app/users
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzZDkwMjYzLWVjMDgtNGM0YS05YTUyLWUzZGM1MWM3NThmYSIsImlhdCI6MTcxODU5NjQwOCwiZXhwIjoxNzE4NTk2NzA4fQ.it6RfMgTKMbcXROnW2dz8s_VeLR5Yyfp_h2Mb5KaPMI
+###
+PATCH https://users-cinerama-production.up.railway.app/users
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg5NTE1NzE5LTYyZjMtNGE1YS1iNTZhLTA5MGQ3ZjdlYjQwNCIsImlhdCI6MTcxODcxNzA0OCwiZXhwIjoxNzE4NzE3MzQ4fQ.AMYldaqLaXNW98XDjCyHDZNXllY0VY2RQ8sLAioAkkg
+
+{
+    "nickname": "Saruman12:D",
+    "password": "3321Mamu*",
+    "name": "Rodrigo Cruzado",
+    "email": "sarupapu97@gmail.com",
+    "register_date": "2022-01-12T00:00:00.000Z"
+}
+
+###
+POST https://users-cinerama-production.up.railway.app/users/signin
+Content-Type: application/json
+
+{
+    "password": "3321Mamu*",
+    "email": "sarupapu97@gmail.com"
+}
